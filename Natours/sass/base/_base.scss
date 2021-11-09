@@ -1,0 +1,24 @@
+
+/* basic browser reset using the universal selector: */
+*,
+*::before,
+*::after  {
+   margin: 0;
+   padding: 0;
+   box-sizing: inherit; /*inherits from body{}*/
+}
+
+/* 
+PROJECT SETTINGS:
+default browser font is 16px
+we want to set it to 10px to easy calculate REMs
+percentage is best for accessibility (ie. when zooming in)
+so 10/16 = 0.625  (10px = 1rem) 
+*/
+html {
+   font-size: 62.5%;
+}
+
+body {
+   box-sizing: border-box; /* makes borders, paddings NOT add to total width, height */
+}
