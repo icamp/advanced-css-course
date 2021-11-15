@@ -1,6 +1,5 @@
 .row {
    max-width: $grid-width;
-   background-color: #eee;
    margin: 0 auto;   // centers block elements inside other block elements
    
    &:not(:last-child) {
@@ -12,7 +11,6 @@
    // attribute selector to select all elements where class att starts with col-
    [class^="col-"] {
       float: left;
-      background-color: lightseagreen;
 
       &:not(:last-child) {
          margin-right: $gutter-horizontal;
