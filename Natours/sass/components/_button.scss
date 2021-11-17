@@ -39,6 +39,15 @@ pseudoclasses are states of an element
       }
    }
 
+   &--green {
+      background-color: $color-primary;
+      color: $color-white;
+
+      &::after {
+         background-color: $color-primary;
+      }
+   }
+
    &::after {
       content: ""; /*'content' and 'display' properties are required for '::after' pseudoclass to work*/
       display: inline-block;
