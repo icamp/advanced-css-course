@@ -3,6 +3,7 @@
 pseudoclasses are states of an element 
 */
 .btn {
+   &,
    &:link,
    &:visited {
       text-transform: uppercase;
@@ -13,6 +14,10 @@ pseudoclasses are states of an element
       transition: all .2s; /* 'all' will apply to all effects (hover, active etc)*/
       position: relative;
       font-size: $default-font-size;
+
+      // Change for the <button> element (others used are <a> elements)
+      border: none;
+      cursor: pointer;
    }
 
    &:hover {
@@ -25,7 +30,9 @@ pseudoclasses are states of an element
       }
    }
 
-   &:active {
+   &:active,
+   &:focus {
+      outline: none;
       transform: translateY(-.1rem);
       box-shadow: 0 .5rem 1rem rgba($color-black, .2);
    }
