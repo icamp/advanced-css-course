@@ -1,0 +1,38 @@
+.story {
+   width: 75%;
+   margin: 0 auto;
+   box-shadow: 0 3rem 6rem rgba($color-black, .1);
+   background-color: $color-white;
+   border-radius: 3px;
+   padding: 6rem;
+   padding-left: 9rem;
+   font-size: $default-font-size;
+   transform: skewX(-12deg);
+
+   &__shape {
+      width: 15rem;
+      height: 15rem;
+      float: left;   // required for next 'shape-outside' to work
+      
+      -webkit-shape-outside: circle(50% at 50% 50%);   
+      shape-outside: circle(50% at 50% 50%);   // 
+      /* 
+         shape-outside definese where the content FLOATS AROUND the element.
+         reads as: circle(radius[so half the width & height] at center horizontally center vertically) 
+         shape-outside only works when the element is floated and 
+         has defined dimentions (width, height)  
+      */
+
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      transform: translateX(-3rem) skewX(12deg);;
+   }
+
+   &__img {
+      height: 100%;   // 100% is full height of the parent, not of the img
+   }
+
+   &__text {
+      transform: skewX(12deg);
+   }
+} 
