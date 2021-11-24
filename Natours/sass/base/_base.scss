@@ -16,9 +16,25 @@ percentage is best for accessibility (ie. when zooming in)
 so 10/16 = 0.625  (10px = 1rem) 
 */
 html {
-   font-size: 62.5%;
+   font-size: 62.5%;    // 1rem
+
+   // @include respond(phone) {
+   //    font-size: 50%;
+   // }     >> >> >> same as tab-por
+   
+   @include respond(tab-land) {  // ? width < 900
+      font-size: 56.25%;   // 1rem = 9px, 9/16=0.5625
+   }
+   
+   @include respond(tab-por) {   // ? width < 600    
+      font-size: 50%;   // 1rem = 8px, 8/16=0.5
+   }
+
+   @include respond(big-desktop) {
+      font-size: 75%;   // 1rem - 12px, 12/16=0.75
+   }
 }
 
 body {
    box-sizing: border-box; /* makes borders, paddings NOT add to total width, height */
-}
+ }

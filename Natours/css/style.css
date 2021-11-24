@@ -1,3 +1,18 @@
+/*
+0 - 600 px:          Phone   
+601 - 900px:         Tablet Portrait
+901 - 1200px:        Tablet Landscape
+[1201 - 1800]        normal styles
+1800px+ :            Big Desktop
+
+$breakpoint arguments:
+   -  phone
+   -  tab-por
+   -  tab-land
+   -  big-desktop
+
+   1em = 16px
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -46,6 +61,15 @@ so 10/16 = 0.625  (10px = 1rem)
 */
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box;
