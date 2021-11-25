@@ -20,13 +20,13 @@ html {
 
    // @include respond(phone) {
    //    font-size: 50%;
-   // }     >> >> >> same as tab-por
+   // }                          -- same as tab-por
    
-   @include respond(tab-land) {  // ? width < 900
+   @include respond(tab-land) {  // ? width < 1200
       font-size: 56.25%;   // 1rem = 9px, 9/16=0.5625
    }
    
-   @include respond(tab-por) {   // ? width < 600    
+   @include respond(tab-port) {   // ? width < 900    
       font-size: 50%;   // 1rem = 8px, 8/16=0.5
    }
 
@@ -37,4 +37,9 @@ html {
 
 body {
    box-sizing: border-box; /* makes borders, paddings NOT add to total width, height */
+   padding: 3rem;
+
+   @include respond(tab-port) {
+      padding: 0;
+   }
  }
