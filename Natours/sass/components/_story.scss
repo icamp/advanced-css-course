@@ -23,20 +23,26 @@
       width: 15rem;
       height: 15rem;
       float: left;   // required for next 'shape-outside' to work
-      
-      -webkit-shape-outside: circle(50% at 50% 50%);   
-      shape-outside: circle(50% at 50% 50%);   // 
-      /* 
-         shape-outside definese where the content FLOATS AROUND the element.
-         reads as: circle(radius[so half the width & height] at center horizontally center vertically) 
-         shape-outside only works when the element is floated and 
-         has defined dimentions (width, height)  
-      */
-
-      -webkit-clip-path: circle(50% at 50% 50%);
-      clip-path: circle(50% at 50% 50%);
+            
       transform: translateX(-3rem) skewX(12deg);;
       position: relative;
+      overflow: hidden;    // fixes image overflowing if shape-outside is not supported
+      border-radius: 50%;  // to work with overflow
+      
+      @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+         -webkit-clip-path: circle(50% at 50% 50%);
+         clip-path: circle(50% at 50% 50%);
+         
+         -webkit-shape-outside: circle(50% at 50% 50%);   
+         shape-outside: circle(50% at 50% 50%);   
+            /* 
+            shape-outside definese where the content FLOATS AROUND the element.
+            reads as: circle(radius[so half the width & height] at center horizontally center vertically) 
+            shape-outside only works when the element is floated and 
+            has defined dimentions (width, height)  
+            */
+         border-radius: none;
+      }
 
       @include respond(phone) {
          transform: translateX(-3rem) skewX(0);
