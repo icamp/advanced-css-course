@@ -15,9 +15,9 @@
       height: 95vh;
    }
    
-   @media (min-resolution: 192dpi) and (min-width:37.5em),               // condition 1
-          (-webkit-min-device-pixel-ratio: 2) and (min-width:37.5em),    // safari compatibility for condition 1
-          (min-width: 125em) {                                           // condition 2
+   @media only screen and (min-resolution: 192dpi) and (min-width:37.5em),               // condition 1
+          only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width:37.5em),    // safari compatibility for condition 1
+          only screen and (min-width: 125em) {                                           // condition 2
             background-image: linear-gradient(
             to right bottom, 
             rgba($color-primary-light, 0.8), 
