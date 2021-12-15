@@ -24,10 +24,20 @@
 
 .sidebar {
    background-color: var(--color-grey-dark-1);
+
    flex: 0 0 18%;    // (flexGrow flexShring flexBasis)
+
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
 }
 
 .hotel-view {
    background-color: #fff;
-   flex: 1;    // let's the element grow to fill available space
+
+   flex: 1;    // lets the element grow to fill available space
+
+   // test
+   background-color: dodgerblue;
+   height: 80rem;
 }
